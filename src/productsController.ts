@@ -14,14 +14,14 @@ const prisma  = new PrismaClient()
 async function getAll(req: Request, res: Response) {
   try {
 
-      const { token } = req.body || req.params  
+  //     const { token } = req.body || req.params  
 
-  const verify = await verifyToken(token)
+  // const verify = await verifyToken(token)
 
-    if (!verify) {
+  //   if (!verify) {
     
-    return res.status(400).send({msg: "Token Inválido"})
-  }
+  //   return res.status(400).send({msg: "Token Inválido"})
+  // }
     const data = await prisma.products.findMany()
 
     return res.status(200).send({data})
